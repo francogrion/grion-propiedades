@@ -1,15 +1,15 @@
-use chrono::{ DateTime, Local };
+use chrono::{ DateTime, Utc };
 use serde::{ Deserialize, Serialize };
-use surrealdb::types::RecordId;
+use surrealdb::types::{ RecordId, SurrealValue };
 
 use super::{ estado::Estado, image::Image };
 
-#[derive(Debug, Deserialize, Serialize, Clone)]
+#[derive(Clone, Debug, Deserialize, Serialize, SurrealValue)]
 pub(crate) struct Property {
     pub(crate) id: Option<RecordId>,
     pub(crate) bathrooms: u32,
     pub(crate) bedrooms: u32,
-    pub(crate) created_at: Option<DateTime<Local>>,
+    pub(crate) created_at: Option<DateTime<Utc>>,
     pub(crate) currency: String,
     pub(crate) description: String,
     pub(crate) estado: Estado,
