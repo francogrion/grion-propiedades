@@ -13,5 +13,5 @@ pub fn create_router() -> Router {
         .route("/api/healthchecker", get(health_checker_handler))
         .route("/api/properties", get(get_all_properties_query))
         .route("/api/properties/{id}", get(get_property_by_id_query))
-        .route("/api/properties/{name}", get(get_property_by_title_query))
+        .route("/api/properties/find", get(get_property_by_title_query))
 }

@@ -1,4 +1,4 @@
-use axum::{ extract::Path, Json, http::StatusCode, response::IntoResponse };
+use axum::{ Json, http::StatusCode, response::IntoResponse };
 use log::debug;
 use serde_json::json;
 
