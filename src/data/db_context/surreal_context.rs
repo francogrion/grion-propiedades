@@ -1,7 +1,6 @@
 use log::debug;
 use once_cell::sync::Lazy;
-use surrealdb::engine::any;
-use surrealdb::{ Result, Surreal, engine::remote::ws::{ Client }, opt::auth::Root };
+use surrealdb::{ Result, Surreal, engine::{ any, remote::ws::Client }, opt::auth::Root };
 
 pub static DB: Lazy<Surreal<Client>> = Lazy::new(Surreal::init);
 
